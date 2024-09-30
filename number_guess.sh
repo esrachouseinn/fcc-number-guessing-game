@@ -12,7 +12,7 @@ USER_ID_RESULT=$($PSQL "SELECT user_id FROM users WHERE username='$USERNAME'")
 GAMES_PLAYED=$($PSQL "SELECT COUNT(game_id) FROM games WHERE user_id='$USER_ID_RESULT'")
 BEST_GAME=$($PSQL "SELECT MIN(number_of_guesses) FROM games WHERE user_id='$USER_ID_RESULT'")
 
-# if player is not found 
+# if player is not foundd
 if [[ -z $USER_ID_RESULT ]]
 then
     # greet player
