@@ -7,7 +7,7 @@ PSQL="psql --username=freecodecamp --dbname=db_users -t --no-align -c"
 echo -e "\nEnter your username:"
 read USERNAME
 
-# get user id and data from user
+# get user id and data
 USER_ID_RESULT=$($PSQL "SELECT user_id FROM users WHERE username='$USERNAME'")
 GAMES_PLAYED=$($PSQL "SELECT COUNT(game_id) FROM games WHERE user_id='$USER_ID_RESULT'")
 BEST_GAME=$($PSQL "SELECT MIN(number_of_guesses) FROM games WHERE user_id='$USER_ID_RESULT'")
